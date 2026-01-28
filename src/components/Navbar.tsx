@@ -19,11 +19,18 @@ import {
 import Link from "next/link";
 import { Button } from "./ui/button";
 
+interface NavLink {
+  href: string;
+  label: string;
+  icon?: React.ReactNode; // icon is optional
+}
+
 const Navbar = () => {
   const { isSignedIn } = useUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const authLinks = [
+  // Signed-in links with icons
+  const authLinks: NavLink[] = [
     { href: "/", label: "Home", icon: <HomeIcon size={16} /> },
     { href: "/generate-program", label: "Generate", icon: <BookOpenIcon size={16} /> },
     { href: "/focus", label: "Focus", icon: <BarChart2Icon size={16} /> },
@@ -31,11 +38,15 @@ const Navbar = () => {
     { href: "/profile", label: "Profile", icon: <UserIcon size={16} /> },
   ];
 
-  const guestLinks = [
+  // Guest links without icons
+  const guestLinks: NavLink[] = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
+
+  // Determine which links to show
+  const linksToShow = isSignedIn ? authLinks : guestLinks;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md shadow-sm py-3">
@@ -52,13 +63,13 @@ const Navbar = () => {
 
         {/* DESKTOP LINKS */}
         <nav className="hidden md:flex flex-1 justify-center items-center gap-6 text-sm">
-          {(isSignedIn ? authLinks : guestLinks).map((link) => (
+          {linksToShow.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className="flex items-center gap-1 hover:text-primary transition-colors"
             >
-              {link.icon} {link.label}
+              {link.icon && <span>{link.icon}</span>} {link.label}
             </Link>
           ))}
         </nav>
@@ -71,7 +82,7 @@ const Navbar = () => {
             <>
               <SignInButton>
                 <Button
-                  variant={"outline"}
+                  variant="outline"
                   className="border-primary/50 text-primary hover:text-white hover:bg-primary/10 text-sm"
                 >
                   Sign In
@@ -100,14 +111,14 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-background/90 backdrop-blur-md border-t border-gray-200 shadow-md">
           <div className="flex flex-col p-4 gap-3">
-            {(isSignedIn ? authLinks : guestLinks).map((link) => (
+            {linksToShow.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="flex items-center gap-2 py-2 px-3 rounded hover:bg-gray-100 transition"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {link.icon} {link.label}
+                {link.icon && <span>{link.icon}</span>} {link.label}
               </Link>
             ))}
 
@@ -119,7 +130,7 @@ const Navbar = () => {
                 <div className="flex flex-col gap-2">
                   <SignInButton>
                     <Button
-                      variant={"outline"}
+                      variant="outline"
                       className="border-primary/50 text-primary hover:text-white hover:bg-primary/10 w-full text-sm"
                     >
                       Sign In

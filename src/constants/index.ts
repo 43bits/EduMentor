@@ -2,7 +2,7 @@ export const USER_PROGRAMS = [
   {
     id: 1,
     first_name: "Sarah",
-    profilePic: "https://randomuser.me/api/portraits/women/74.jpg",
+    profilePic: "https://randomuser.me/api/portraits/lego/6.jpg",
     study_goal: "Exam Preparation",
     age: 20,
     study_days: 5,
@@ -43,8 +43,8 @@ export const USER_PROGRAMS = [
 
   {
     id: 2,
-    first_name: "Michael",
-    profilePic: "https://randomuser.me/api/portraits/men/75.jpg",
+    first_name: "Mohit",
+    profilePic: "https://randomuser.me/api/portraits/lego/1.jpg",
     study_goal: "Skill Improvement",
     age: 25,
     study_days: 4,
@@ -84,8 +84,8 @@ export const USER_PROGRAMS = [
 
   {
     id: 3,
-    first_name: "Elena",
-    profilePic: "https://randomuser.me/api/portraits/women/76.jpg",
+    first_name: "Aryan",
+    profilePic: "https://randomuser.me/api/portraits/lego/1.jpg",
     study_goal: "Career Advancement",
     age: 30,
     study_days: 3,

@@ -24,6 +24,59 @@ const HomePage = () => {
       >
         {/* MATRIX GRID BACKGROUND */}
         <div className="fixed inset-0 -z-10 bg-[linear-gradient(var(--cyber-grid-color)_1px,transparent_1px),linear-gradient(90deg,var(--cyber-grid-color)_1px,transparent_1px)] bg-[size:20px_20px]" />
+           <section className="relative z-10 py-24">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* LEFT CONTENT */}
+              <div className="lg:col-span-7 space-y-6 bg-background/90 p-6 rounded-lg shadow-lg">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+                  <span className="text-primary">Aptitude & Learning Diagnostic</span>
+                </h2>
+
+                <p className="text-xl text-muted-foreground md:w-2/3">
+                  A short, game-based aptitude test that understands how you think,
+                  where you struggle, and how you can improve — before you even start studying.
+                </p>
+
+                <ul className="space-y-3 text-lg">
+                  <li>✔ Identifies learning gaps early</li>
+                  <li>✔ Improves problem-solving & reasoning skills</li>
+                  <li>✔ Turns education into an interactive game</li>
+                  <li>✔ Helps overcome fear of subjects step-by-step</li>
+                </ul>
+
+                <p className="text-muted-foreground md:w-2/3">
+                  This diagnostic helps students overcome confusion, build confidence,
+                  and follow a smarter learning path instead of memorizing blindly.
+                </p>
+
+                <div className="pt-4">
+                  <Button
+                    size="lg"
+                    asChild
+                    className="bg-primary text-primary-foreground px-8 py-6 text-lg font-medium"
+                  >
+                    <Link href="/analyse" className="flex items-center font-mono">
+                      Start Aptitude Test
+                      <ArrowRightIcon className="ml-2 size-5" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              {/* RIGHT VISUAL */}
+              <div className="lg:col-span-5 bg-background/90 p-6 rounded-lg shadow-lg">
+                <div className="relative aspect-square max-w-lg mx-auto overflow-hidden rounded-lg bg-muted">
+                  <img
+                    src="/hero-ai3.png" // optional image
+                    alt="Aptitude Test"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* HERO SECTION: AI Study Plan */}
         <section className="relative z-10 py-24 flex-grow">
@@ -90,7 +143,7 @@ const HomePage = () => {
                 <div className="relative aspect-square max-w-lg mx-auto">
                   <div className="relative overflow-hidden rounded-lg bg-muted">
                     <img
-                      src="/hero-ai3.png"
+                      src="/hero-ai2.png"
                       alt="AI Learning Mentor"
                       className="w-full h-full object-cover object-center"
                     />
@@ -180,7 +233,7 @@ const HomePage = () => {
                 <div className="relative aspect-square max-w-lg mx-auto">
                   <div className="relative overflow-hidden rounded-lg bg-muted">
                     <img
-                      src="/focus-preview.png" // replace with your focus app image
+                      src="/hero-ai.png" // replace with your focus app image
                       alt="Focus "
                       className="w-full h-full object-cover rounded-lg"
                     />

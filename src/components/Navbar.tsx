@@ -33,6 +33,7 @@ const Navbar = () => {
   const authLinks: NavLink[] = [
     { href: "/", label: "Home", icon: <HomeIcon size={16} /> },
     { href: "/generate-program", label: "Generate", icon: <BookOpenIcon size={16} /> },
+    { href: "/analyse", label: "analyse", icon: <BookOpenIcon size={16} /> },
     { href: "/focus", label: "Focus", icon: <BarChart2Icon size={16} /> },
     { href: "/career-guide", label: "Career Guide", icon: <GlobeIcon size={16} /> },
     { href: "/profile", label: "Profile", icon: <UserIcon size={16} /> },

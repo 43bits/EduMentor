@@ -32,7 +32,7 @@ export default function RootLayout({
     <ConvexClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         >
           {/* ✅ Sync Clerk → Zustand */}
           <ClerkUserSync />
@@ -52,7 +52,7 @@ export default function RootLayout({
             />
           </div>
 
-          <main className="pt-24 flex-grow">{children}</main>
+          <main className="flex-grow pt-24">{children}</main>
           <Footer />
         </body>
       </html>
